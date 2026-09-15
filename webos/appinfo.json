@@ -1,0 +1,15 @@
+{
+  "id": "com.simplestreamer.tv",
+  "version": "1.0.0",
+  "vendor": "simple-streamer",
+  "type": "web",
+  "main": "index.html",
+  "title": "Simple Streamer",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "iconColor": "#0f1115",
+  "bgColor": "#0f1115",
+  "resolution": "1920x1080",
+  "disableBackHistoryAPI": false,
+  "requiredPermissions": ["internet"]
+}

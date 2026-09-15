@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>simple-streamer</title>
+<meta name="theme-color" content="#0f1115" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-title" content="Streamer" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" href="icon-192.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <h1>simple-streamer</h1>
+  <div class="header-actions">
+    <a class="icon-btn" href="search.html" aria-label="Search">&#128269;</a>
+    <button class="secondary" id="openSettings">API Key</button>
+  </div>
+</header>
+
+<main>
+  <div class="hero" id="hero" hidden></div>
+
+  <div class="rows">
+    <section class="row" id="continueSection" hidden>
+      <h2>Continue Watching</h2>
+      <div class="row-grid" id="continueGrid"></div>
+    </section>
+
+    <section class="row" id="favoritesSection" hidden>
+      <h2>Favorites</h2>
+      <div class="row-grid" id="favoritesGrid"></div>
+    </section>
+
+    <section class="row" id="recommendedSection" hidden>
+      <h2>Recommended For You</h2>
+      <div class="row-grid" id="recommendedGrid"></div>
+    </section>
+
+    <section class="row" id="trendingSection" hidden>
+      <h2>Trending Now</h2>
+      <div class="row-grid" id="trendingGrid"></div>
+    </section>
+
+    <section class="row" id="popularMoviesSection" hidden>
+      <h2>Popular Movies</h2>
+      <div class="row-grid" id="popularMoviesGrid"></div>
+    </section>
+
+    <section class="row" id="popularTvSection" hidden>
+      <h2>Popular TV Shows</h2>
+      <div class="row-grid" id="popularTvGrid"></div>
+    </section>
+  </div>
+</main>
+
+<dialog id="settings">
+  <label for="apiKey">TMDB API key (v3 key or v4 read token)</label>
+  <input type="password" id="apiKey" placeholder="Paste your TMDB key" />
+  <div class="actions">
+    <button class="secondary" id="cancelSettings" type="button">Cancel</button>
+    <button id="saveSettings" type="button">Save</button>
+  </div>
+</dialog>
+
+<script type="module" src="app.js"></script>
+<script src="tvnav.js"></script>
+</body>
+</html>

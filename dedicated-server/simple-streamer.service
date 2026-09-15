@@ -1,0 +1,19 @@
+[Unit]
+Description=simple-streamer (TMDB browser + player) dedicated server
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Edit this to wherever you cloned the repo on this machine.
+WorkingDirectory=/home/YOUR_USERNAME/simple-streamer
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=5
+User=YOUR_USERNAME
+
+# server.js already loads ./.env itself (via `dotenv/config`) — no need to
+# repeat TMDB_API_KEY etc. here, just make sure that file exists alongside it.
+
+[Install]
+WantedBy=multi-user.target

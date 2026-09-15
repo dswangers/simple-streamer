@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Player</title>
+<meta name="theme-color" content="#0f1115" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-title" content="Streamer" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" href="icon-192.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="player-page">
+<header>
+  <a class="back" href="index.html">&larr; Home</a>
+</header>
+
+<main>
+  <p id="status"></p>
+
+  <div class="player-frame-wrap">
+    <!--
+      src is intentionally empty. Set it (from TMDB_DATA below) to whatever
+      player/source you plug in.
+    -->
+    <iframe
+      id="player-frame"
+      src=""
+      allowfullscreen
+      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+      referrerpolicy="no-referrer"
+    ></iframe>
+    <p class="empty-note" id="emptyNote">
+      No player source configured yet.<br />
+      The selected title's TMDB data is available on <code>window.TMDB_DATA</code>
+      for wiring up an iframe <code>src</code>.
+    </p>
+  </div>
+
+  <div class="title-row" id="titleRow" style="display:none">
+    <img id="poster" alt="" />
+    <div class="title-info">
+      <h2 id="titleName"></h2>
+      <p id="meta" class="detail-meta"></p>
+      <div id="ratingsRow" class="ratings-row" hidden></div>
+      <button id="favoriteBtn" class="favorite-btn" type="button">☆ Add to Favorites</button>
+      <p class="overview" id="overview"></p>
+    </div>
+  </div>
+
+  <div id="seasonChipsSection" class="season-chips-section" hidden>
+    <div class="season-row" id="seasonRow"></div>
+  </div>
+
+  <section class="cast-section" id="castSection" hidden>
+    <h2>Cast</h2>
+    <div class="cast-list" id="castList"></div>
+  </section>
+
+  <div id="episodeListSection" hidden>
+    <div class="episode-list" id="episodeList"></div>
+  </div>
+
+  <section class="row" id="similarSection" hidden>
+    <h2>More Like This</h2>
+    <div class="row-grid" id="similarGrid"></div>
+  </section>
+</main>
+
+<!-- Full TMDB payload for the selected title, also mirrored to window.TMDB_DATA -->
+<script id="tmdb-data" type="application/json"></script>
+<script type="module" src="player.js"></script>
+<script src="tvnav.js"></script>
+</body>
+</html>

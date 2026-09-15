@@ -1,0 +1,18 @@
+[Unit]
+Description=simple-streamer mobile app Expo dev server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Edit this to wherever you cloned the repo on this machine.
+WorkingDirectory=/home/YOUR_USERNAME/simple-streamer/mobile
+# expo start reads EXPO_PACKAGER_HOSTNAME from mobile/.env itself — see
+# mobile/.env.example — nothing needed here for that.
+ExecStart=/usr/bin/npx expo start
+Restart=on-failure
+RestartSec=5
+User=YOUR_USERNAME
+
+[Install]
+WantedBy=multi-user.target
